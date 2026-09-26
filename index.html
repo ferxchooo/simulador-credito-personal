@@ -1,51 +1,219 @@
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plataforma de Simulación de Crédito FRO</title>
+
+  <title>Banco FRO | Simulador de Crédito</title>
+
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
   <div class="container">
-    <h1>Simulador de Crédito Personal FRO</h1>
-    <form id="credit-form">
-      <label for="monto">Monto del Crédito Solicitado ($):</label>
-      <input type="number" id="monto" value="150000" required>
-      
-      <label for="tasa">Tasa de Interés Anual Ordinaria (%):</label>
-      <input type="number" id="tasa" value="34" step="0.1" required>
-      
-      <label for="plazo">Plazo del Financiamiento (Meses):</label>
-      <select id="plazo">
-        <option value="12">12 meses</option>
-        <option value="24">24 meses</option>
-        <option value="36">36 meses</option>
-        <option value="48" selected>48 meses</option>
-      </select>
 
-      <button type="button" id="btn-calcular">Calcular Amortización</button>
-    </form>
+    <!-- ENCABEZADO DEL BANCO -->
+    <header class="header">
 
-    <!-- Tabla para renderizar los resultados de amortización -->
-    <table id="tabla-amortizacion">
-      <thead>
-        <tr>
-          <th>Mes</th>
-          <th>Saldo Inicial</th>
-          <th>Capital</th>
-          <th>Interés</th>
-          <th>IVA (16%)</th>
-          <th>Pago Total</th>
-          <th>Saldo Final</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Filas generadas dinámicamente mediante JavaScript -->
-      </tbody>
-    </table>
+    
+
+      <div class="bank-info">
+        <h1>Banco FRO</h1>
+        <p>Simulador de Crédito Personal</p>
+      </div>
+
+    </header>
+
+
+    <!-- TARJETA DE DATOS -->
+    <section class="card">
+
+      <div class="card-title">
+
+        <div>
+          <h2>Datos del crédito</h2>
+          <p>Ingresa la información para realizar tu simulación</p>
+        </div>
+
+        <span class="bank-badge">
+          BANCO FRO
+        </span>
+
+      </div>
+
+
+      <form id="credit-form">
+
+        <div class="form-grid">
+
+
+          <!-- NOMBRE DEL CLIENTE -->
+          <div class="form-group full-width">
+
+            <label for="nombre">
+              Nombre del cliente
+            </label>
+
+            <input
+              type="text"
+              id="nombre"
+              placeholder="Escribe el nombre completo"
+              required
+            >
+
+          </div>
+
+
+          <!-- MONTO -->
+          <div class="form-group">
+
+            <label for="monto">
+              Monto del crédito solicitado
+            </label>
+
+            <div class="input-money">
+
+              <span>$</span>
+
+              <input
+                type="number"
+                id="monto"
+                value="150000"
+                min="1"
+                placeholder="150000"
+                required
+              >
+
+            </div>
+
+          </div>
+
+
+          <!-- TASA -->
+          <div class="form-group">
+
+            <label for="tasa">
+              Tasa de interés anual ordinaria
+            </label>
+
+            <div class="input-percent">
+
+              <input
+                type="number"
+                id="tasa"
+                value="34"
+                min="0"
+                step="0.1"
+                placeholder="34"
+                required
+              >
+
+              <span>%</span>
+
+            </div>
+
+          </div>
+
+
+          <!-- PLAZO -->
+          <div class="form-group">
+
+            <label for="plazo">
+              Plazo del financiamiento
+            </label>
+
+            <select id="plazo" required>
+
+              <option value="12">
+                12 meses
+              </option>
+
+              <option value="24">
+                24 meses
+              </option>
+
+              <option value="36">
+                36 meses
+              </option>
+
+              <option value="48" selected>
+                48 meses
+              </option>
+
+            </select>
+
+          </div>
+
+
+        </div>
+
+
+        <!-- BOTÓN -->
+        <button type="button" id="btn-calcular">
+
+          <span>▣</span>
+
+          Calcular amortización
+
+        </button>
+
+      </form>
+
+    </section>
+
+
+   
+
+      <!-- TABLA -->
+      <div class="table-container">
+
+        <table id="tabla-amortizacion">
+
+          <thead>
+
+            <tr>
+              <th>Mes</th>
+              <th>Saldo Inicial</th>
+              <th>Capital</th>
+              <th>Interés</th>
+              <th>IVA (16%)</th>
+              <th>Pago Total</th>
+              <th>Saldo Final</th>
+            </tr>
+
+          </thead>
+
+          <tbody>
+            <!-- Las filas serán generadas mediante JavaScript -->
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+
+      <strong>Banco FRO</strong>
+
+      <p>
+        Simulador de Crédito Personal 
+      </p>
+
+    </footer>
+
   </div>
 
+
   <script src="script.js"></script>
+
 </body>
+
 </html>
+```
